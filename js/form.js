@@ -2,7 +2,17 @@ const inpEmail = document.querySelector('.form__email'),
         inpName = document.querySelector('.form__name'),
         inpStore = document.querySelector('.form__store'),
         btn = document.querySelector('.part__form-btn'),
-        invalidEmail = document.querySelector('.part__invalid-email');
+        invalidEmail = document.querySelector('.part__invalid-email'),
+        burgerBtn = document.querySelector('.burger-menu__btn '),
+        burgerMenu = document.querySelector('.menu__small-screen'),
+        body = document.querySelector('body');
+
+burgerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    burgerBtn.classList.toggle('active');
+    burgerMenu.classList.toggle('show');
+    body.classList.toggle('hidden')
+})
 
 
         inpEmail.addEventListener('input', ()=> { 
