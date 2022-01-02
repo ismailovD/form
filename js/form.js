@@ -4,12 +4,13 @@ const inpEmail = document.querySelector('.form__email'),
         btn = document.querySelector('.part__form-btn'),
         invalidEmail = document.querySelector('.part__invalid-email'),
         burgerBtn = document.querySelector('.burger-menu__btn '),
+        burgerIcon = document.querySelector('.burger-menu__icon'),
         burgerMenu = document.querySelector('.menu__small-screen'),
         body = document.querySelector('body');
 
 burgerBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    burgerBtn.classList.toggle('active');
+    burgerIcon.classList.toggle('active');
     burgerMenu.classList.toggle('show');
     body.classList.toggle('hidden')
 })
