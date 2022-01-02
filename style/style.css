@@ -572,7 +572,7 @@ body.hidden {
     }
 
     .header__bottom-content {
-        padding: 10px 20px; 
+        padding: 10px 0; 
     }
 
     .header {
