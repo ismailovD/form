@@ -462,22 +462,20 @@ body {
 }
 .menu__small-screen {
     position: fixed;
-    top: 70px;
+    top: 60px;
     left: 0;
     bottom: 0;
     background: var(--white); 
     width: 100%;
-    z-index: 10; 
-    transition:   .2s;
+    z-index: 10;  
     flex-direction: column;  
     padding-top: 20px;
     padding-bottom: 20px;
-    border-top: 2px solid var(--blue);
-    transform: translateY(-150%);
+    border-top: 2px solid var(--blue); 
+    display: none;
 }
 .menu__small-screen.show { 
-    transform: translateY(0);
-    z-index: 15;
+    display: block;
 }
 
 .menu__small-screen .header__nav {
@@ -586,6 +584,10 @@ body.hidden {
     }
     .burger-menu__btn {
         display: flex;
+    }
+
+    .logo {
+        max-width: 120px;
     }
 }
 @media (max-width: 767px) {
