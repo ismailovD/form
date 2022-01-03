@@ -460,6 +460,15 @@ body {
     display: flex;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
 }
+.menu__small-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100vw;
+    height: 100vh; 
+    z-index: -15;
+}
 .menu__small-screen.show {  
     left: 0;
 }
