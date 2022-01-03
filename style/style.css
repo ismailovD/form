@@ -230,6 +230,7 @@ body {
 }
 .logo{
     max-width: 170px;
+    display: inline-block;
 }
 
 .logo-img {
@@ -415,7 +416,6 @@ body {
     display: inline-block;
 }
 
-
 .burger-menu__line {
     position: absolute;
     top: 50%;
@@ -427,83 +427,152 @@ body {
     display: inline-block; 
     transition: opacity 0.2s;
 }
-
-
-
 .burger-menu__icon::after, .burger-menu__icon::before{
     background-color: #000;
     border-radius: 4px;
     content: "";
     height: 2px;
-    left: 0;
+    left: 0; 
     position: absolute;
-    transform-origin: 8% 1px;
+    transform-origin: 50% 50% 0;
     transition: width .2s,transform .2s;
     width: 100%;
 }
-.burger-menu__icon::after{ 
+ .burger-menu__icon::after{ 
     bottom: 0;
     width: 70%; 
 }
-.burger-menu__icon::before{ 
+ .burger-menu__icon::before{ 
     top: 0;  
-}
-
-.burger-menu__icon.active .burger-menu__line{
-    opacity: 0;
-}
-.burger-menu__icon.active::before{
-    transform: rotate(45deg);
-}
- 
-.burger-menu__icon.active::after{
-    transform: rotate(-45deg);
-    width: 100%;
 }
 .menu__small-screen {
     position: fixed;
-    top: 60px;
-    left: 0;
+    top: 0;
+    left: -100%;
     bottom: 0;
     background: var(--white); 
+    max-width: 300px;
     width: 100%;
-    z-index: 10;  
-    flex-direction: column;  
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 2px solid var(--blue); 
-    display: none;
+    z-index: 15;  
+    flex-direction: column; 
+    padding: 30px 16px;
+    transition: left 0.2s;
+    display: flex;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
 }
-.menu__small-screen.show { 
-    display: block;
+.menu__small-screen.show {  
+    left: 0;
 }
-
+.menu__logo {
+    width: 100%;
+    border-bottom: 1px solid var(--grey-2);
+    text-align: center; 
+    padding-bottom: 11px;
+}
+ 
 .menu__small-screen .header__nav {
-    flex-direction: column;
+    flex-direction: column;  
+    padding: 10px 0;
+    border-bottom: 1px solid var(--grey-2);
 }
 .menu__small-screen .nav__link{
-    padding: 5px 20px;
+    padding: 10px 20px;
     margin-right: 0;
+    text-align: center;
 }
-.menu__small-screen .nav__link:hover {
-    padding: 5px 20px;
-    background: var(--grey);
-}
+ 
  
 .menu__small-screen .header__top-content{
     flex-direction: column;
 }
 .menu__small-screen .header__offer{
     flex-direction: column;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--grey-2);
+    margin-bottom: 44px;
 }
  
 .menu__small-screen .header__offer-link{
     margin-left: 0; 
+    justify-content: center;
+    font-family: var(--f700-gilroy);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22.5px;
+    color: var(--nav-link);
+    text-transform: uppercase;
+}
+ 
+.menu__small-screen .header__offer-link:hover{ 
+    color: var(--blue);
+    background: transparent;
 }
  
 .menu__small-screen .header__contact{
     flex-direction: column;
 }
+.menu__small-screen .contact__type{
+    border-right: none;
+    justify-content: center;
+}
+.menu__small-screen .contact__type:hover{
+   background: transparent;
+}
+.menu__small-screen .contact__type:hover .contact__icon{
+   transform: scale(1);
+}
+ 
+.menu__small-screen .contact__icon{
+   fill: var(--blue);
+}
+.menu__small-screen .contact__social{
+  justify-content: center;
+  margin-right: 0;
+}
+.menu__small-screen .contact__social-link:hover{
+   background: transparent;
+}
+.menu__small-screen .contact__social-link:hover .contact__social-icon{
+   transform: scale(1);
+   fill: var(--purple);
+}
+.menu__small-screen .contact__social-icon{
+  fill: var(--purple);
+}
+.menu__small-screen .burger-menu__close{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 15px; 
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu__small-screen .burger-menu__close:hover{
+    background: var(--grey-2);
+}
+.menu__small-screen .burger-menu__close-icon{
+    width: 15px;
+    height: 15px;
+    fill: var(--purple);
+}
+ 
+.menu__text {
+    font-family: var(--f700-gilroy);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue); 
+    text-align: center;
+    margin-bottom: 18px;
+}
+ 
+
  
 body.hidden {
     overflow: hidden;

@@ -4,15 +4,19 @@ const inpEmail = document.querySelector('.form__email'),
         btn = document.querySelector('.part__form-btn'),
         invalidEmail = document.querySelector('.part__invalid-email'),
         burgerBtn = document.querySelector('.burger-menu__btn '),
-        burgerIcon = document.querySelector('.burger-menu__icon'),
+        burgerClose = document.querySelector('.burger-menu__close'),
         burgerMenu = document.querySelector('.menu__small-screen'),
         body = document.querySelector('body');
 
 burgerBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    burgerIcon.classList.toggle('active');
-    burgerMenu.classList.toggle('show');
-    body.classList.toggle('hidden')
+    e.preventDefault(); 
+    burgerMenu.classList.add('show');
+    body.classList.add('hidden')
+})
+burgerClose.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    burgerMenu.classList.remove('show');
+    body.classList.remove('hidden')
 })
 
 
